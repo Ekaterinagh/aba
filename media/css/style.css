@@ -1,0 +1,82 @@
+body{
+margin:0;
+padding:0;
+background:url('../img/bg.jpg');	 
+color:white;
+}
+.header {
+
+background:black;
+}
+.menu{
+display:flex;
+width:100%;
+text-align:center;
+margin:0 auto;
+flex-dirrection: row;
+font-weight:bold;
+}
+.menu a{
+flex:1;
+font-size:mpx;
+text-align: center;
+padding: 10px;
+color:white;
+background: black; 
+text-decoration:none;
+}
+.menu a:hover {
+background:gray;
+color:black;
+}	
+.logotext{
+color:white;
+font-size:130%;
+font-family:arial;
+text-shadow:1px 1px 1px gray;
+float:center;
+padding:5px;
+margin:0;
+text-align:center; 
+line-height:1.3em;
+}
+.logo{
+float:left;
+padding:5px;
+position:relative;
+left:60px;
+}
+.footer{
+background:black;
+}
+.indextext{
+color:white;
+font-size:medium;
+font-style:italic;
+font-family:arial;
+text-shadow:1px 1px 1px gray;
+line-height: 130%;
+float:center;
+padding:5px;
+margin:0;
+text-indent: 20px;
+}
+.capturetext{
+color:red;
+text-align:center;
+font-size:150%;
+font-family:arial;
+text-shadow:1px 1px 1px gray;
+line-height: 130%;
+float:center;
+padding:5px;
+margin:0;	
+}
+@media screen and (max-width:600px){
+.menu{
+flex-dirrection:column;
+}
+logo{
+display:none;
+}
+}
