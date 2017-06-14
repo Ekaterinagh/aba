@@ -3,24 +3,58 @@ require_once('templates/top.php');?>
 <div class="capturetext">INSCRIPTION
 </div>
 <?php 
-//echo "<pre>";
-//print_r($_POST);
-//echo"</pre>";
+//print_html($_POST);
 if($_POST){
 	$err=[];
+	$Prenom=$_POST['Prenom'];
+	$NomdeFamille=$_POST['NomdeFamille'];
+	$Email=$_POST['Email'];
 	$MotdePasse=$_POST['MotdePasse'];
 	$MotdePasseConfirmation=$_POST['MotdePasseConfirmation'];
+	$inlineRadioOptions=$_POST['inlineRadioOptions'];
 	if($MotdePasse==$MotdePasseConfirmation){
-		echo'ok';
 	}
-		else{
-			$err[]="password is not correct";
-		}
+	else{
+		$err[]="password is not correct";
+	}
+	$query="SELECT * FROM users WHERE email='$Email'";
+	$adr=query_execute($db_con, $query);
+	/*$addr=mysqli_query($db_con, $query);
+	if(!$adr){
+		exit($query); //test
+	}*/
+	if(mysqli_num_rows($adr)>0){
+		$err[]='This email is already existe';
+	}
 	foreach($err as $one){
 		echo "<p style='color:red' class='error'>";
 		echo $one;
 		echo "</p>";
 	}	
+	if (empty($err)){
+		$query="INSERT INTO users VALUES(NULL, 
+										'$Prenom', 
+										'$NomdeFamille', 
+										'$Email', 
+										'$MotdePasse', 
+										NOW(), 
+										NOW(), 
+										'unblock', 
+										'$inlineRadioOptions')";
+		query_execute($db_con,$query);
+		/*$in=mysqli_query($db_con, $query);
+		if(!$in){
+			exit($query); //test
+		}
+		else{*/
+			page_refresh('login.php');
+			/*?>
+			<script>
+			document.location.href='login.php';
+			</script>
+			<?php 
+		}*/
+	}
 }
 ?>
 <form method='POST'class="form-horizontal">
@@ -56,15 +90,16 @@ if($_POST){
 	</div>
 	<div class="col-xs-offset-3 col-xs-9">
 		<label class="radio-inline">
-			<input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Femme"> Femme
+			<input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="femme"> Femme
 		</label>
 		<label class="radio-inline">
-			<input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Homme"> Homme
+			<input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="homme"> Homme
 		</label>
 	</div>
 	<div class="form-group">
 		<div class="col-xs-offset-3 col-xs-9">
-			<button type="submit" class="btn btn-default">Creer un compte</button>
+			</br>
+			<button type="submit" class="btn btn-default">Creér un compte</button>
 		</div>
 	</div>
 </form>
