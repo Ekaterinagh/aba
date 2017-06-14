@@ -1,10 +1,12 @@
 <?php $title="AMERICAN BODY ART - TATOUEUR PARIS";
 	if ($_GET['url']){
+		$url=$_GET['url'];
 	}else{
 		$url='index';
 	};
 	require_once('templates/top.php');
 	$query="SELECT * FROM maintexts WHERE url='$url'";
+	//echo $query;
 	$adr=query_execute($db_con,$query);
 	/*$adr=mysqli_query($db_con, $query);
 	if(!$adr){
