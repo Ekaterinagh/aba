@@ -14,7 +14,7 @@ function page_refresh($page){
 function query_execute($db_con,$query){
 	$adr=mysqli_query($db_con, $query);
 	if(!$adr){
-		exit($query); 
+		exit($query); //temp
 	}
 	return $adr;
 }

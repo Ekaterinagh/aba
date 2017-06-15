@@ -19,6 +19,8 @@ include_once('utils/libs.php');
 		<meta name="keywords" content="<?=(isset($title))?$title:"tattoo, piercing, art";?>">
 		<link type="text/css" rel="stylesheet" href="media/bootstrap/css/bootstrap.min.css"/>
 		<link type="text/css" rel="stylesheet" href="media/css/style.css"/>
+		<script src="/js/jquery-3.2.1.min.js"></script>
+		<script src="/js/main.js"></script>
 		<?php
 		if($_SESSION['user_id']){
 			?>

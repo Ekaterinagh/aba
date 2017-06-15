@@ -19,12 +19,12 @@
 					<h3 class="indextext">
 						<p><?=$result['body'];?></p>
 					</h3>
+				<div class="empty" align="center"> </div>
 				<h4 style="text-align: center;">		   
-					<a href="#"> <img src="media/img/salon.png" border="2"/> </a>		
-					<a href="#"> <img src="media/img/tattoback.png" border="2"/> </a>		
-					<a href="#"> <img src="media/img/inside.png" border="2"/> </a>
-					<a href="#"> <img src="media/img/tattoarm.png" border="2"/> </a>
-					<a href="#"> <img src="media/img/stand.png" border="2"/> </a>		
+				<img class="big_picture" data-src="media/img/salon_big.png" src="media/img/salon.png" border="2"/> 	
+				<img class="big_picture" data-src="media/img/tattoback_big.png" src="media/img/tattoback.png" border="2"/> <img class="big_picture" data-src="media/img/piercing4_big.png" src="media/img/piercing4.png" border="2"/> 
+				<img class="big_picture" data-src="media/img/tatoo1_big.png" src="media/img/tatoo1.png" border="2"/> 
+				<img class="big_picture" data-src="media/img/stand_big.png" src="media/img/stand.png" border="2"/> 	
 				</h4>
 				<br/>
 <?php require_once('templates/bottom.php');?>
