@@ -22,6 +22,14 @@ include_once('utils/libs.php');
 		<script src="/js/jquery-3.2.1.min.js"></script>
 		<script src="/js/main.js"></script>
 		<?php
+		if(count($scripts)>0){
+			foreach($scripts as $one){
+				?>
+				<script src='<?=$one;?>'>
+				</script>
+				<?php
+			}
+		}
 		if($_SESSION['user_id']){
 			?>
 			<script src="/media/js/home.js">
@@ -46,7 +54,7 @@ include_once('utils/libs.php');
 				<a href="/">ACCUEIL</a>
 				<a href="index.php?url=tatouage">TATOUAGE</a>
 				<a href="index.php?url=piercing">PIERCING</a>
-				<a href="/">GALERIE</a>
+				<a href="gallery.php">GALERIE</a>
 				<a href="index.php?url=contacts">CONTACTS</a>
 				
 			</nav>		

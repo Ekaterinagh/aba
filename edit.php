@@ -13,6 +13,9 @@ if($_SESSION['user_id']){
 			if(!$move){
 				exit('error picture');
 			}
+			if(file_exists($_SERVER['DOCUMENT_ROOT'].$com['picture'])){
+				@unlink($_SERVER['DOCUMENT_ROOT'].$com['picture']);	
+				} 
 		}else{
 				$filename=$com['picture'];
 			}
@@ -41,8 +44,7 @@ if($_SESSION['user_id']){
 		<input type="file" name="picture" id="picture">
 		</br>
 		<?php if($com['picture'] != ''){
-				echo "<img src='".$com['picture']."'/>";
-				//@unlink($com['picture']);
+				echo "<img src='".$com['picture']."'/>";				
 			}else{
 				echo '<img src="/uploads/salon.png"/>';
 			}

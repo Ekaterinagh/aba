@@ -11,8 +11,8 @@ if(!$adr){
 }
 if(mysqli_num_rows($adr)>0){
 	$res=mysqli_fetch_array($adr);
-	if(file_exists($res['picture'])){
-	@unlink($res['picture']);	
+	if(file_exists($_SERVER['DOCUMENT_ROOT'].$res['picture'])){
+	@unlink($_SERVER['DOCUMENT_ROOT'].$res['picture']);	
 	}
 	$query="DELETE FROM comments WHERE id='$id'";
 	query_execute($db_con,$query);
