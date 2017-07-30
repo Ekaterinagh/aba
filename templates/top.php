@@ -21,6 +21,7 @@ include_once('utils/libs.php');
 		<link type="text/css" rel="stylesheet" href="media/css/style.css"/>
 		<script src="/js/jquery-3.2.1.min.js"></script>
 		<script src="/js/main.js"></script>
+		<script src="/media/ckeditor/ckeditor.js"></script>
 		<?php
 		if(count($scripts)>0){
 			foreach($scripts as $one){
@@ -34,8 +35,7 @@ include_once('utils/libs.php');
 			?>
 			<script src="/media/js/home.js">
 			</script>
-			<script src="/media/ckeditor/ckeditor.js">
-			</script>
+			<!--<script src="/media/ckeditor/ckeditor.js"></script>-->
 			<?php
 		}
 		?>

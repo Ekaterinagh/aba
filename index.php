@@ -4,6 +4,9 @@
 	}else{
 		$url='index';
 	};
+	
+	
+	
 	require_once('templates/top.php');
 	$query="SELECT * FROM maintexts WHERE url='$url'";
 	//echo $query;
